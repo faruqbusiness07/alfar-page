@@ -1,122 +1,258 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal website dan portfolio Faruq.">
-    <title>Alfar | Personal Website</title>
+    <meta name="description" content="Personal website of Muhammad Faruq Ghullam Al Khoiri (Faruq), Informatics Engineering student.">
+    <title>Faruq | Personal Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- NAVIGATION -->
-    <header>
-        <nav>
-            <a href="#home">Alfar.</a>
-
-            <ul>
+    <header class="navbar" id="navbar">
+        <nav class="nav-inner">
+            <a href="#home" class="logo">Alfar.</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- MAIN CONTENT -->
     <main>
 
-        <!-- HERO SECTION -->
-        <section id="home">
-            <p>Hello, I'm</p>
-            <h1>Muhammad Faruq Ghullam Al Khoiri</h1>
-            <h2>Informatics Engineering Student</h2>
+        <!-- HERO -->
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <h1>Hi, I'm Faruq.</h1>
+                    <p class="full-name">Muhammad Faruq Ghullam Al Khoiri</p>
+                    <p class="role">Informatics Engineering Student</p>
+                    <p class="lead">
+                        I'm curious about web development, AI, UI/UX, technology, and business,
+                        and I'm learning by building things one project at a time.
+                    </p>
+                    <div class="btn-group">
+                        <a href="#projects" class="btn btn-primary">Explore My Work</a>
+                        <a href="#contact" class="btn btn-ghost">Let's Connect</a>
+                    </div>
+                </div>
 
-            <p>
-                Welcome to my personal space.
-                Here, I share my journey, projects,
-                and things I'm passionate about.
-            </p>
-
-            <a href="#projects">Explore My Work</a>
-            <a href="#contact">Get in Touch</a>
+                <!-- Kartu kecil di kanan hero: edit teksnya sesuai kondisi kamu sekarang -->
+                <aside class="now-card" aria-label="What I'm up to">
+                    <p class="now-title"><span class="dot"></span> Right now</p>
+                    <ul>
+                        <li>Building this website</li>
+                        <li>Practicing Flutter and CodeIgniter</li>
+                        <li>Exploring AI and UI/UX</li>
+                    </ul>
+                </aside>
+            </div>
         </section>
 
-        <!-- ABOUT SECTION -->
-        <section id="about">
-            <h2>About Me</h2>
+        <!-- ABOUT -->
+        <section class="section alt" id="about">
+            <div class="container narrow reveal">
+                <h2>About me</h2>
+                <p>
+                    I'm an Informatics Engineering student who enjoys understanding how technology
+                    works and how it can be useful for people and for business.
+                    Web development is where I'm spending most of my time right now.
+                </p>
+                <p>
+                    I learn best by doing: start with a small idea, build it, break it, then fix it.
+                    Every project, big or small, teaches me something new,
+                    and I'm still growing through projects and experience.
+                </p>
 
-            <p>
-                I'm an Informatics Engineering student
-                interested in web development, UI/UX design,
-                technology, and business.
-            </p>
-
-            <p>
-                I believe that learning is a continuous journey.
-                This website is a place to document my growth
-                and share what I create.
-            </p>
+                <div class="outside">
+                    <h3>Outside the screen</h3>
+                    <p>When I'm not coding, you'll find me:</p>
+                    <ul class="tags">
+                        <li>Jogging</li>
+                        <li>Gaming</li>
+                        <li>Self-development</li>
+                        <li>Exploring new things</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
-        <!-- PROJECTS SECTION -->
-        <section id="projects">
-            <h2>Selected Projects</h2>
+        <!-- EXPERIENCE -->
+        <section class="section" id="experience">
+            <div class="container narrow">
+                <h2 class="reveal">Experience</h2>
 
-            <article>
-                <h3>Veganix</h3>
-                <p>Online vegetable shopping website.</p>
-                <a href="#">View Project</a>
-            </article>
+                <div class="timeline">
+                    <article class="timeline-item reveal">
+                        <p class="when">September 2024 – May 2025</p>
+                        <h3>PT Kreasi Bisnis Nusantara (Ombein)</h3>
+                        <p>
+                            Worked on product checking, data input, and sales,
+                            and learned how to work with a team in a real business setting.
+                        </p>
+                    </article>
 
-            <article>
-                <h3>SportHub</h3>
-                <p>Sports-related e-commerce website.</p>
-                <a href="#">View Project</a>
-            </article>
-
-            <article>
-                <h3>Laundry App</h3>
-                <p>Mobile application for laundry services.</p>
-                <a href="#">View Project</a>
-            </article>
+                    <article class="timeline-item reveal">
+                        <p class="when">[Periode, edit di sini]</p>
+                        <h3>BEM UDB: Staff Advokesma</h3>
+                        <p>
+                            Part of the student executive body, contributing to the team,
+                            practicing communication, and joining in on student advocacy and welfare work.
+                        </p>
+                    </article>
+                </div>
+            </div>
         </section>
 
-        <!-- INTERESTS SECTION -->
-        <section id="interests">
-            <h2>Things I Enjoy</h2>
+        <!-- PROJECTS -->
+        <section class="section alt" id="projects">
+            <div class="container">
+                <h2 class="reveal">Projects</h2>
+                <p class="section-intro reveal">Things I've built while learning.</p>
 
-            <ul>
-                <li>Technology & AI</li>
-                <li>UI/UX Design</li>
-                <li>Business & Strategy</li>
-                <li>Sports & Jogging</li>
-                <li>Books & Self Development</li>
-            </ul>
+                <div class="project-grid">
+                    <!-- Tiap project: ganti teknologi, tahun, dan link "#" dengan yang asli -->
+                    <article class="project-card reveal">
+                        <h3>Veganix</h3>
+                        <p>Online vegetable store where people can browse and order fresh vegetables.</p>
+                        <ul class="tags small"><li>[Isi teknologi]</li></ul>
+                        <p class="status">[Tahun / status]</p>
+                        <a href="#" class="card-link">View Project</a>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <h3>SportHub</h3>
+                        <p>Sports-related e-commerce website for sports gear and equipment.</p>
+                        <ul class="tags small"><li>[Isi teknologi]</li></ul>
+                        <p class="status">[Tahun / status]</p>
+                        <a href="#" class="card-link">View Project</a>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <h3>Laundry App</h3>
+                        <p>Mobile app for managing laundry orders and services.</p>
+                        <ul class="tags small"><li>Flutter</li><li>Supabase</li></ul>
+                        <p class="status">[Tahun / status]</p>
+                        <a href="#" class="card-link">View GitHub</a>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <h3>Personal Landingpage</h3>
+                        <p>This website: my personal space to share who I am and what I'm building.</p>
+                        <ul class="tags small"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+                        <p class="status">2026 · In progress</p>
+                        <a href="#" class="card-link">View GitHub</a>
+                    </article>
+                </div>
+            </div>
         </section>
 
-        <!-- CONTACT SECTION -->
-        <section id="contact">
-            <h2>Let's Connect</h2>
+        <!-- ACHIEVEMENTS & PUBLICATIONS -->
+        <section class="section" id="achievements">
+            <div class="container narrow">
+                <h2 class="reveal">Achievements &amp; Publications</h2>
 
-            <p>
-                Have a project, idea, or just want to say hello?
-                Feel free to reach out.
-            </p>
+                <!-- Ganti placeholder dengan data asli. Hapus item yang belum ada. -->
+                <div class="achv-list">
+                    <article class="achv reveal">
+                        <p class="year">[Tahun]</p>
+                        <div>
+                            <h3>[Judul publikasi jurnal]</h3>
+                            <p>[Deskripsi singkat: topik dan peran kamu.]</p>
+                            <a href="#" class="card-link">View Publication</a>
+                        </div>
+                    </article>
 
-            <a href="mailto:your@email.com">Email Me</a>
-            <a href="https://www.instagram.com/">Instagram</a>
-            <a href="https://github.com/">GitHub</a>
-            <a href="https://www.linkedin.com/">LinkedIn</a>
+                    <article class="achv reveal">
+                        <p class="year">[Tahun]</p>
+                        <div>
+                            <h3>[Nama sertifikat penting]</h3>
+                            <p>[Penerbit dan apa yang dipelajari.]</p>
+                            <a href="#" class="card-link">View Certificate</a>
+                        </div>
+                    </article>
+
+                    <article class="achv reveal">
+                        <p class="year">[Tahun]</p>
+                        <div>
+                            <h3>[Pencapaian akademik / proyek]</h3>
+                            <p>[Deskripsi singkat.]</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="section alt" id="skills">
+            <div class="container narrow reveal">
+                <h2>Skills</h2>
+
+                <h3>Technical skills</h3>
+                <!-- Tambah class "learning" di <li> untuk skill yang masih dipelajari -->
+                <ul class="tags">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Flutter</li>
+                    <li>PHP</li>
+                    <li>CodeIgniter</li>
+                    <li>Git</li>
+                </ul>
+
+                <h3>Interested in</h3>
+                <ul class="tags">
+                    <li class="learning">AI / ML</li>
+                    <li class="learning">UI / UX</li>
+                    <li class="learning">Web Development</li>
+                    <li class="learning">Business &amp; Technology</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section contact" id="contact">
+            <div class="container narrow reveal">
+                <h2>Have something to talk about?</h2>
+                <p>
+                    A project idea, a collaboration, or just a hello.
+                    I'd be glad to hear from you.
+                </p>
+
+                <div class="email-row">
+                    <a href="mailto:your@email.com" class="btn btn-primary" id="emailLink">your@email.com</a>
+                    <button class="btn btn-ghost" id="copyEmail" type="button">Copy email</button>
+                </div>
+
+                <ul class="social">
+                    <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+                </ul>
+            </div>
         </section>
 
     </main>
 
     <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 Faruq. All rights reserved.</p>
+    <footer class="footer">
+        <p>&copy; 2026 Faruq. Built with HTML, CSS, and JavaScript.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
