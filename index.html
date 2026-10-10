@@ -18,7 +18,7 @@
         <nav class="nav-inner">
             <a href="#home" class="logo">Alfar.</a>
             <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-                <span></span><span></span>
+                <span></span><span></span><span></span>
             </button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
@@ -32,78 +32,73 @@
         </nav>
     </header>
 
+    <!-- Mobile Drawer Overlay -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+
     <main>
 
         <!-- HERO -->
-<section class="hero" id="home">
-    <div class="container hero-grid">
+        <section class="hero" id="home">
+            <div class="container hero-grid">
 
-        <!-- TEXT -->
-        <div class="hero-text">
+                <!-- TEXT -->
+                <div class="hero-text">
+                    <span class="hero-badge">
+                        <span class="dot-pulse"></span>
+                        Available for collaboration
+                    </span>
 
-            <h1>Hi, I'm Faruq.</h1>
+                    <h1>Hi, I'm <span class="highlight">Faruq.</span></h1>
 
-            <p class="full-name">
-                Muhammad Faruq Ghullam Al Khoiri
-            </p>
+                    <p class="full-name">Muhammad Faruq Ghullam Al Khoiri</p>
 
-            <p class="role">
-                Informatics Engineering Student
-            </p>
+                    <p class="role">Informatics Engineering Student</p>
 
-            <p class="lead">
-                I'm curious about web development, AI, UI/UX, technology,
-                and business, and I'm learning by building things one project at a time.
-            </p>
+                    <p class="lead">
+                        I'm curious about web development, AI, UI/UX, technology,
+                        and business, and I'm learning by building things one project at a time.
+                    </p>
 
-            <div class="btn-group">
-                <a href="#projects" class="btn btn-primary">
-                    Explore My Work
-                </a>
+                    <div class="btn-group">
+                        <a href="#projects" class="btn btn-primary">
+                            Explore My Work
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="#contact" class="btn btn-ghost">Let's Connect</a>
+                    </div>
+                </div>
 
-                <a href="#contact" class="btn btn-ghost">
-                    Let's Connect
-                </a>
+                <!-- PROFILE -->
+                <div class="hero-profile">
+                    <div class="profile-photo">
+                        <img src="image/alfar.miror.jpeg" alt="Muhammad Faruq Ghullam Al Khoiri">
+                    </div>
+
+                    <!-- RIGHT NOW -->
+                    <aside class="now-card" aria-label="What I'm up to">
+                        <p class="now-title">
+                            <span class="dot"></span>
+                            Right now
+                        </p>
+                        <ul>
+                            <li>Building website for personal &amp; business needs</li>
+                            <li>Exploring AI, UI/UX, and web development</li>
+                            <li>Learning markets, XAUUSD &amp; Stocks</li>
+                        </ul>
+                    </aside>
+                </div>
+
             </div>
 
-        </div>
-
-
-        <!-- PROFILE -->
-        <div class="hero-profile">
-
-            <div class="profile-photo">
-                <img
-                    src="image/alfar.miror.jpeg"
-                    alt="Muhammad Faruq Ghullam Al Khoiri"
-                >
-            </div>
-
-            <!-- RIGHT NOW -->
-            <aside class="now-card" aria-label="What I'm up to">
-
-                <p class="now-title">
-                    <span class="dot"></span>
-                    Right now
-                </p>
-
-                <ul>
-                    <li>Building website for personal & business needs</li>
-                    <li>Exploring AI, UI/UX, and web development </li>
-                    <li>Learning markets, XAUUSD & Stocks</li>
-                   
-                </ul>
-
-            </aside>
-
-        </div>
-
-    </div>
-</section>
+            <!-- Decorative blobs -->
+            <div class="blob blob-1" aria-hidden="true"></div>
+            <div class="blob blob-2" aria-hidden="true"></div>
+        </section>
 
         <!-- ABOUT -->
         <section class="section alt" id="about">
             <div class="container narrow reveal">
+                <span class="section-label">Who I am</span>
                 <h2>About me</h2>
                 <p>
                     I'm an Informatics Engineering student who enjoys understanding how technology
@@ -120,10 +115,10 @@
                     <h3>Outside the screen</h3>
                     <p>When I'm not coding, you'll find me:</p>
                     <ul class="tags">
-                        <li>Jogging</li>
-                        <li>Gaming</li>
-                        <li>Self-development</li>
-                        <li>Exploring new things</li>
+                        <li>🏃 Jogging</li>
+                        <li>🎮 Gaming</li>
+                        <li>📚 Self-development</li>
+                        <li>🔍 Exploring new things</li>
                     </ul>
                 </div>
             </div>
@@ -132,6 +127,7 @@
         <!-- EXPERIENCE -->
         <section class="section" id="experience">
             <div class="container narrow">
+                <span class="section-label reveal">Career</span>
                 <h2 class="reveal">Experience</h2>
 
                 <div class="timeline">
@@ -159,41 +155,65 @@
         <!-- PROJECTS -->
         <section class="section alt" id="projects">
             <div class="container">
+                <span class="section-label reveal">Portfolio</span>
                 <h2 class="reveal">Projects</h2>
                 <p class="section-intro reveal">Things I've built while learning.</p>
 
                 <div class="project-grid">
-                    <!-- Tiap project: ganti teknologi, tahun, dan link "#" dengan yang asli -->
                     <article class="project-card reveal">
+                        <div class="project-icon" style="background: #ecfdf5; color: #059669;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        </div>
                         <h3>Veganix</h3>
                         <p>Online vegetable store where people can browse and order fresh vegetables.</p>
                         <ul class="tags small"><li>[Isi teknologi]</li></ul>
                         <p class="status">[Tahun / status]</p>
-                        <a href="#" class="card-link">View Project</a>
+                        <a href="#" class="card-link">
+                            View Project
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                        </a>
                     </article>
 
                     <article class="project-card reveal">
+                        <div class="project-icon" style="background: #eff6ff; color: #3b82f6;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                        </div>
                         <h3>SportHub</h3>
                         <p>Sports-related e-commerce website for sports gear and equipment.</p>
                         <ul class="tags small"><li>[Isi teknologi]</li></ul>
                         <p class="status">[Tahun / status]</p>
-                        <a href="#" class="card-link">View Project</a>
+                        <a href="#" class="card-link">
+                            View Project
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                        </a>
                     </article>
 
                     <article class="project-card reveal">
+                        <div class="project-icon" style="background: #fdf4ff; color: #a855f7;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+                        </div>
                         <h3>Laundry App</h3>
                         <p>Mobile app for managing laundry orders and services.</p>
                         <ul class="tags small"><li>Flutter</li><li>Supabase</li></ul>
                         <p class="status">[Tahun / status]</p>
-                        <a href="#" class="card-link">View GitHub</a>
+                        <a href="#" class="card-link">
+                            View GitHub
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                        </a>
                     </article>
 
                     <article class="project-card reveal">
+                        <div class="project-icon" style="background: #fff7ed; color: #f97316;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </div>
                         <h3>Personal Landingpage</h3>
                         <p>This website: my personal space to share who I am and what I'm building.</p>
                         <ul class="tags small"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
                         <p class="status">2026 · In progress</p>
-                        <a href="#" class="card-link">View GitHub</a>
+                        <a href="#" class="card-link">
+                            View GitHub
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                        </a>
                     </article>
                 </div>
             </div>
@@ -202,17 +222,18 @@
         <!-- ACHIEVEMENTS & PUBLICATIONS -->
         <section class="section" id="achievements">
             <div class="container narrow">
+                <span class="section-label reveal">Recognition</span>
                 <h2 class="reveal">Achievements &amp; Publications</h2>
 
-                <!-- Ganti placeholder dengan data asli. Hapus item yang belum ada. -->
                 <div class="achv-list">
                     <article class="achv reveal">
                         <p class="year">2026</p>
                         <div>
                             <h3>Prediksi Partisipasi Mahasiswa dalam Kegiatan Kampus Menggunakan Algoritma Random Forest</h3>
                             <p>Penerapan Machine Learning dalam Artificial Intelegence</p>
-                            <a href="#" class="card-link">Prosiding Seminar Nasional Teknologi Informasi dan Bisnis
-, 2026</a>
+                            <a href="#" class="card-link">Prosiding Seminar Nasional Teknologi Informasi dan Bisnis, 2026
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                            </a>
                         </div>
                     </article>
 
@@ -221,12 +242,14 @@
                         <div>
                             <h3>[Nama sertifikat penting]</h3>
                             <p>[Penerbit dan apa yang dipelajari.]</p>
-                            <a href="#" class="card-link">View Certificate</a>
+                            <a href="#" class="card-link">View Certificate
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                            </a>
                         </div>
                     </article>
 
                     <article class="achv reveal">
-                        <p class="year">2025 - 2026</p>
+                        <p class="year">2025–2026</p>
                         <div>
                             <h3>Badan Eksekutif Mahasiswa</h3>
                             <p>Staf Divisi Advokasi Mahasiswa</p>
@@ -239,10 +262,10 @@
         <!-- SKILLS -->
         <section class="section alt" id="skills">
             <div class="container narrow reveal">
+                <span class="section-label">Toolbox</span>
                 <h2>Skills</h2>
 
                 <h3>Building with</h3>
-                <!-- Tambah class "learning" di <li> untuk skill yang masih dipelajari -->
                 <ul class="tags">
                     <li>HTML</li>
                     <li>CSS</li>
@@ -254,11 +277,10 @@
                 </ul>
 
                 <h3>Currently Exploring</h3>
-               
                 <ul class="tags">
-                    <li class="learning">UI/UX Design - Figma</li>
-                    <li class="learning">Python - AI / Machine Learning</li>
-                    <li class="learning">React - Web Development</li>
+                    <li class="learning">UI/UX Design – Figma</li>
+                    <li class="learning">Python – AI / Machine Learning</li>
+                    <li class="learning">React – Web Development</li>
                     <li class="learning">Business &amp; Technology</li>
                 </ul>
             </div>
@@ -267,6 +289,7 @@
         <!-- CONTACT -->
         <section class="section contact" id="contact">
             <div class="container narrow reveal">
+                <span class="section-label">Get in touch</span>
                 <h2>Have something to talk about?</h2>
                 <p>
                     A project idea, a collaboration, or just a hello.
@@ -274,15 +297,63 @@
                 </p>
 
                 <div class="email-row">
-                    <a href="mailto:faruqbusiness07@gmail.com" class="btn btn-primary" id="emailLink">faruqbusiness07@email.com</a>
-                    <button class="btn btn-ghost" id="copyEmail" type="button">Copy email</button>
+                    <a href="mailto:faruqbusiness07@gmail.com" class="btn btn-primary" id="emailLink">faruqbusiness07@gmail.com</a>
+                    <button class="btn btn-ghost" id="copyEmail" type="button">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                        Copy email
+                    </button>
                 </div>
 
-                <ul class="social">
-                    <li><a href="https://www.instagram.com/heyalfar.alv/?hl=en" target="_blank" rel="noopener">Instagram</a></li>
-                    <li><a href="https://github.com/faruqbusiness07" target="_blank" rel="noopener">GitHub</a></li>
-                    <li><a href="https://www.linkedin.com/in/alfarbusiness  " target="_blank" rel="noopener">LinkedIn</a></li>
-                </ul>
+                <!-- CONNECT ME – Social links with icons -->
+                <div class="connect-section">
+                    <p class="connect-label">Connect me</p>
+                    <ul class="social">
+
+                        <!-- Instagram -->
+                        <li>
+                            <a href="https://www.instagram.com/heyalfar.alv/?hl=en" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                                <span class="social-icon">
+                                    <svg width="30" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                                    </svg>
+                                </span>
+                                <span class="social-name"></span>
+                                <span class="social-handle">heyalfar.alv</span>
+                            </a>
+                        </li>
+
+                        <!-- GitHub -->
+                        <li>
+                            <a href="https://github.com/faruqbusiness07" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                                <span class="social-icon">
+                                    <svg width="30" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                    </svg>
+                                </span>
+                                <span class="social-name"></span>
+                                <span class="social-handle">faruqbusiness07</span>
+                            </a>
+                        </li>
+
+                        <!-- LinkedIn -->
+                        <li>
+                            <a href="https://www.linkedin.com/in/alfarbusiness" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                                <span class="social-icon">
+                                    <svg width="30" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                        <rect x="2" y="9" width="4" height="12"/>
+                                        <circle cx="4" cy="4" r="2"/>
+                                    </svg>
+                                </span>
+                                <span class="social-name"></span>
+                                <span class="social-handle">alfarbusiness</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -290,9 +361,22 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-        <p>&copy; 2026 Faruq. Built with HTML, CSS, and JavaScript.</p>
+        <p>&copy; 2026 Faruq &mdash; Built with HTML, CSS &amp; JavaScript.</p>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Drawer overlay close
+        document.getElementById('drawerOverlay').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.remove('open');
+            document.getElementById('navToggle').setAttribute('aria-expanded', 'false');
+            document.getElementById('drawerOverlay').classList.remove('active');
+        });
+        const origToggle = document.getElementById('navToggle');
+        origToggle.addEventListener('click', () => {
+            const open = document.getElementById('navLinks').classList.contains('open');
+            document.getElementById('drawerOverlay').classList.toggle('active', open);
+        });
+    </script>
 </body>
-</html> 
+</html>
