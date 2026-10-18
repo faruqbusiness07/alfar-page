@@ -371,25 +371,243 @@ a:focus-visible, button:focus-visible {
 .when { font-size: 0.85rem; color: var(--gray-500); margin-bottom: 0.2rem; }
 
 /* ===== PROJECTS ===== */
+/* Ganti blok "PROJECTS" lama di style.css dengan file ini.
+   Memakai variabel milikmu (--white, --blue, --blue-dark, --gray-500, --shadow);
+   angka setelah koma adalah cadangan kalau variabelnya belum ada. */
+
 .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
 
 .project-card {
-    background: var(--white);
+    background: var(--white, #fff);
     border-radius: 18px;
     padding: 1.8rem;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow, 0 4px 18px rgba(15, 23, 42, 0.06));
     border: 1px solid transparent;
+    cursor: pointer;
     transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
 .project-card:hover {
     transform: translateY(-4px);
-    border-color: var(--blue);
+    border-color: var(--blue, #42b8f4);
     box-shadow: 0 12px 32px rgba(66, 184, 244, 0.18);
 }
-.status { font-size: 0.85rem; color: var(--gray-500); margin-bottom: 1rem; }
+.project-card:active { transform: translateY(-1px); }
+.project-card:focus-visible {
+    outline: 3px solid var(--blue, #42b8f4);
+    outline-offset: 3px;
+}
 
-.card-link { font-weight: 600; font-size: 0.92rem; color: var(--blue-dark); border-bottom: 1.5px solid transparent; transition: border-color 0.2s; }
-.card-link:hover { border-color: var(--blue-dark); }
+/* Perbaikan: ikon tadi melebar penuh karena belum punya ukuran */
+.project-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 1rem;
+}
+
+.status { font-size: 0.85rem; color: var(--gray-500, #6b7280); margin-bottom: 1rem; }
+
+.card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--blue-dark, #1d9bd8);
+    border-bottom: 1.5px solid transparent;
+    transition: border-color 0.2s;
+}
+.project-card:hover .card-link,
+.card-link:hover { border-color: var(--blue-dark, #1d9bd8); }
+.card-link svg { transition: transform 0.2s; }
+.project-card:hover .card-link svg { transform: translate(2px, -2px); }
+
+/* ===== MODAL ===== */
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+}
+.modal.is-open {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.25s ease;
+}
+
+.modal-dialog {
+    position: relative;
+    width: min(860px, 100%);
+    max-height: calc(100dvh - 2rem);
+    overflow-y: auto;
+    background: var(--white, #fff);
+    border-radius: 22px;
+    box-shadow: 0 30px 80px rgba(15, 23, 42, 0.35);
+    transform: translateY(24px) scale(0.95);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.25, 1), opacity 0.3s ease;
+}
+.modal.is-open .modal-dialog { transform: none; opacity: 1; }
+
+.modal-close {
+    position: absolute;
+    top: 0.9rem;
+    right: 0.9rem;
+    z-index: 5;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    color: #1f2937;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.15);
+    transition: transform 0.2s, background 0.2s;
+}
+.modal-close:hover { transform: rotate(90deg); background: #fff; }
+
+/* ===== CAROUSEL ===== */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    background: #eef2f7;
+    border-radius: 22px 22px 0 0;
+    touch-action: pan-y;
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.carousel-slide {
+    flex: 0 0 100%;
+    aspect-ratio: 16 / 9;
+    background: #eef2f7;
+}
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    color: #1f2937;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.18);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.carousel-btn:hover { background: var(--blue, #42b8f4); color: #fff; transform: translateY(-50%) scale(1.08); }
+.carousel-btn.prev { left: 0.9rem; }
+.carousel-btn.next { right: 0.9rem; }
+
+.carousel-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 0.9rem;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.4rem 0.7rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.85);
+}
+.carousel-dot {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: #cbd5e1;
+    cursor: pointer;
+    transition: width 0.3s, background 0.3s;
+}
+.carousel-dot:hover { background: #94a3b8; }
+.carousel-dot.is-active { width: 24px; background: var(--blue, #42b8f4); }
+
+.carousel.is-single .carousel-btn,
+.carousel.is-single .carousel-dots { display: none; }
+
+.carousel-btn:focus-visible,
+.carousel-dot:focus-visible,
+.modal-close:focus-visible,
+.modal-actions a:focus-visible {
+    outline: 3px solid var(--blue, #42b8f4);
+    outline-offset: 2px;
+}
+
+/* ===== MODAL BODY ===== */
+.modal-body { padding: 1.6rem 1.8rem 1.9rem; }
+.modal-status { font-size: 0.85rem; color: var(--gray-500, #6b7280); margin-bottom: 0.3rem; }
+.modal-body h3 { font-size: 1.6rem; margin-bottom: 0.6rem; }
+.modal-desc { line-height: 1.7; color: var(--gray-700, #374151); margin-bottom: 1rem; }
+.modal-stack { margin-bottom: 1.4rem; }
+
+.modal-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+.modal-actions a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.65rem 1.2rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.modal-actions .btn-primary { background: var(--blue, #42b8f4); color: #fff; }
+.modal-actions .btn-primary:hover { background: var(--blue-dark, #1d9bd8); box-shadow: 0 8px 20px rgba(66, 184, 244, 0.3); transform: translateY(-2px); }
+.modal-actions .btn-ghost { background: #f1f5f9; color: #1f2937; }
+.modal-actions .btn-ghost:hover { background: #e2e8f0; transform: translateY(-2px); }
+
+body.modal-open { overflow: hidden; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 720px) {
+    .project-grid { grid-template-columns: 1fr; }
+    .project-card { padding: 1.4rem; }
+
+    .modal { padding: 0; align-items: end; }
+    .modal-dialog {
+        width: 100%;
+        max-height: 92dvh;
+        border-radius: 22px 22px 0 0;
+        transform: translateY(60px);
+    }
+    .carousel { border-radius: 22px 22px 0 0; }
+    .carousel-btn { width: 36px; height: 36px; }
+    .carousel-btn.prev { left: 0.5rem; }
+    .carousel-btn.next { right: 0.5rem; }
+    .modal-body { padding: 1.3rem 1.3rem 1.6rem; }
+    .modal-body h3 { font-size: 1.35rem; }
+    .modal-actions a { flex: 1 1 100%; justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .modal, .modal-dialog, .carousel-track, .project-card, .carousel-dot { transition-duration: 0.01ms !important; }
+}
 
 /* ===== ACHIEVEMENTS ===== */
 .achv-list { margin-top: 1.5rem; }
